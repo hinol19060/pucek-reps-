@@ -520,8 +520,8 @@
           <input id="search" class="search" type="search" placeholder="Szukaj produktu..." />
           <div class="filters-scroll">
             <div class="filters">
-              <button class="filter active" data-category="bestfinds">Best Finds</button>
-              <button class="filter" data-category="wszystko">Wszystko</button>
+              <a class="best-finds-filter-link" href="#best-finds">Best Finds</a>
+              <button class="filter active" data-category="wszystko">Wszystko</button>
               <button class="filter" data-category="buty">Buty</button>
               <button class="filter" data-category="bluzy">Bluzy</button>
               <button class="filter" data-category="koszulki">Koszulki</button>
@@ -1931,7 +1931,7 @@
     const searchEl = document.getElementById("search");
     const emptyEl = document.getElementById("empty");
     const filterButtons = [...document.querySelectorAll(".filter")];
-    let aktywnaKategoria = "bestfinds";
+    let aktywnaKategoria = "wszystko";
 
     function bezpiecznyTekst(value) {
       return String(value)
@@ -1945,24 +1945,11 @@
     function renderuj() {
       const fraza = searchEl.value.toLowerCase().trim();
 
-      let widoczne = produkty.filter(p => {
+      const widoczne = produkty.filter(p => {
         const pasujeFraza = p.nazwa.toLowerCase().includes(fraza);
-        const kategorieProduktu = Array.isArray(p.kategorie) && p.kategorie.length ? p.kategorie : [p.kategoria];
-        const pasujeKategoria = aktywnaKategoria === "wszystko" ||
-          (aktywnaKategoria === "bestfinds" ? p.opis === "BEST FIND" : kategorieProduktu.includes(aktywnaKategoria));
+        const pasujeKategoria = aktywnaKategoria === "wszystko" || p.kategoria === aktywnaKategoria;
         return pasujeFraza && pasujeKategoria;
       });
-
-      // BEST FINDS ma pokazywać każdy numer tylko raz, nawet jeśli produkt jest też w dwóch kategoriach.
-      if (aktywnaKategoria === "bestfinds") {
-        const seen = new Set();
-        widoczne = widoczne.filter(p => {
-          const key = p.bestTag || p.link || p.nazwa;
-          if (seen.has(key)) return false;
-          seen.add(key);
-          return true;
-        });
-      }
 
       productsEl.innerHTML = "";
       if (productCountEl) productCountEl.textContent = `Produkty: ${widoczne.length} / ${produkty.length}`;
@@ -1984,9 +1971,9 @@
           </div>
 
           <div class="card-body">
-            <div class="category">${bezpiecznyTekst((Array.isArray(p.kategorie) && p.kategorie.length ? p.kategorie : [p.kategoria]).filter(Boolean).join(" • "))}${p.bestTag ? ` <span class="best-number-tag">${bezpiecznyTekst(p.bestTag)}</span>` : ""}</div>
+            <div class="category">${bezpiecznyTekst(p.kategoria)}${p.bestTag ? ` <span class="best-number-tag">${bezpiecznyTekst(p.bestTag)}</span>` : ""}</div>
             <div class="product-name">${bezpiecznyTekst(p.nazwa)}</div>
-            ${p.opis ? `<div class="product-desc">${bezpiecznyTekst(p.opis)}</div>` : ""}
+            ${p.opis && String(p.opis).trim().toUpperCase() !== "BEST FIND" ? `<div class="product-desc">${bezpiecznyTekst(p.opis)}</div>` : ""}
 
             <div class="meta">
               <div class="price">${bezpiecznyTekst(formatujCene(p.cena))}</div>
@@ -2129,7 +2116,15 @@
         /^travis scott hoodies?\b/i,
         /^louis vuitton hoodies?\b/i,
         /^dior zip-up hoodie\b/i,
-        /^protocol index 25fw fleece-lined hooded zip-up sweatshirt\b/i
+        /^protocol index 25fw fleece-lined hooded zip-up sweatshirt\b/i,
+        /^nike dunk low\b/i,
+        /^dior b23\b/i,
+        /^dior b33\b/i,
+        /^dior b35\b/i,
+        /^dior b44\b/i,
+        /^dior b27\b/i,
+        /^dior slippers\b/i,
+        /^lanvin co-branded slippers\b/i
       ];
 
       for (let i = produkty.length - 1; i >= 0; i--) {
@@ -2315,16 +2310,6 @@
 
 
     const BEST_FINDS_DO_KATEGORII = [
-      {nazwa:"Best Find #1", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-51190000019471159d830a210559_2560_2560.jpg", link:"https://www.usfans.com/product/3/7820355079?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820355079&spider_token=9a2e", opis:"BEST FIND", bestTag:"#1"},
-      {nazwa:"Best Find #2", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-512f0000019471168cd30a210559_2560_2560.jpg", link:"https://www.usfans.com/product/3/7820341161?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820341161&spider_token=7045", opis:"BEST FIND", bestTag:"#2"},
-      {nazwa:"Best Find #3", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/pcitem1888214674-60d40000019e0da9ba7c0a20e7c7_1440_1440.jpg", link:"https://www.usfans.com/product/3/7823382974?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823382974&spider_token=25b5", opis:"BEST FIND", bestTag:"#3"},
-      {nazwa:"Best Find #4", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-4aab000001947115db140a22d234_2560_2560.jpg", link:"https://www.usfans.com/product/3/7820357073?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820357073&spider_token=c18f", opis:"BEST FIND", bestTag:"#4"},
-      {nazwa:"Best Find #5", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-49e70000019471113a540a22d234_2560_2560.jpg", link:"https://www.usfans.com/product/3/7823439634?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823439634&spider_token=7cf1", opis:"BEST FIND", bestTag:"#5"},
-      {nazwa:"Best Find #6", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-7698000001947113293a0a8115b5_2560_2560.jpg", link:"https://www.usfans.com/product/3/7820339151?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820339151&spider_token=bf99", opis:"BEST FIND", bestTag:"#6"},
-      {nazwa:"Best Find #7", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-27a300000194711414900a8133b5_1278_1278.jpg", link:"https://www.usfans.com/product/3/7823427862?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823427862&spider_token=530e", opis:"BEST FIND", bestTag:"#7"},
-      {nazwa:"Best Find #8", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-4f2300000194710a9be70a210559_2560_2560.jpg", link:"https://www.usfans.com/product/3/7823371066?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823371066&spider_token=2c0f", opis:"BEST FIND", bestTag:"#8"},
-      {nazwa:"Best Find #9", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/open1807578469-1234478995-5a760000019471105d6d0aa0834c_2560_2560.jpg", link:"https://www.usfans.com/product/3/7823349162?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823349162&spider_token=61d1", opis:"BEST FIND", bestTag:"#9"},
-      {nazwa:"Best Find #10", cena:"", kategoria:"buty", zdjecie:"https://si.geilicdn.com/pcitem1888214674-56ec0000019b7a18686c0a2315ef_4590_4590.jpg", link:"https://www.usfans.com/product/3/7820339155?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820339155&spider_token=9278", opis:"BEST FIND", bestTag:"#10"},
       {nazwa:"Best Find #11", cena:"", kategoria:"bielizna", zdjecie:"https://si.geilicdn.com/pcitem1888214674-40ef0000019af38dd2870a23038e_1012_1012.jpg", link:"https://www.usfans.com/product/3/7823337260?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823337260&spider_token=e6c3", opis:"BEST FIND", bestTag:"#11"},
       {nazwa:"Best Find #12", cena:"", kategoria:"bielizna", zdjecie:"https://si.geilicdn.com/pcitem1888214674-2c940000019acaba1c3c0a2396f4-unadjust_750_750.png", link:"https://www.usfans.com/product/3/7820347241?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820347241&spider_token=c53b", opis:"BEST FIND", bestTag:"#12"},
       {nazwa:"Best Find #13", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/pcitem1788880988-262d00000193909530400a2304aa_1920_1920.jpg", link:"https://www.usfans.com/product/3/7820419903?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820419903&spider_token=554f", opis:"BEST FIND", bestTag:"#13"},
@@ -2370,52 +2355,6 @@
       BEST_FINDS_DO_KATEGORII.forEach(x => produkty.push({...x}));
     }
 
-    async function zaladujProduktyCMS() {
-      try {
-        const res = await fetch("data/cms-products.json", { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const dane = await res.json();
-        if (!Array.isArray(dane)) return 0;
-
-        // Przy ponownym wywołaniu nie dubluj produktów z Pages CMS.
-        for (let i = produkty.length - 1; i >= 0; i--) {
-          if (produkty[i].zrodlo === "pages-cms") produkty.splice(i, 1);
-        }
-
-        dane.forEach((x, idx) => {
-          if (!x || x.published === false) return;
-          const kategorie = Array.isArray(x.categories) ? x.categories.filter(Boolean) : (x.category ? [x.category] : []);
-          if (!kategorie.length) kategorie.push("akcesoria");
-
-          const waluta = String(x.currency || "PLN").toUpperCase();
-          const cena = (x.price === null || x.price === undefined || x.price === "")
-            ? ""
-            : `${x.price} ${waluta}`;
-          const numer = x.best_find_number !== null && x.best_find_number !== undefined && x.best_find_number !== ""
-            ? String(x.best_find_number).replace(/[^0-9]/g, "")
-            : "";
-          const best = x.best_find === true;
-
-          produkty.push({
-            nazwa: String(x.name || (numer ? `Best Find #${numer}` : `Produkt CMS ${idx + 1}`)),
-            cena,
-            kategoria: kategorie[0],
-            kategorie,
-            zdjecie: String(x.image || ""),
-            link: String(x.usfans || ""),
-            weidian: String(x.weidian || ""),
-            opis: best ? "BEST FIND" : String(x.description || ""),
-            bestTag: best && numer ? `#${numer}` : "",
-            zrodlo: "pages-cms"
-          });
-        });
-        return dane.length;
-      } catch (e) {
-        console.warn("Pages CMS: nie udało się wczytać data/cms-products.json", e);
-        return 0;
-      }
-    }
-
     function uzupelnijBrakujaceCeny() {
       const bazoweUSD = {
         buty: 42,
@@ -2449,10 +2388,8 @@
       }
       dodajDodatkoweBluzy();
       dodajBestFindsDoKategorii();
-      zaladujProduktyCMS().then(() => {
-        uzupelnijBrakujaceCeny();
-        renderuj();
-      });
+      uzupelnijBrakujaceCeny();
+      renderuj();
     });
 
     const popup = document.getElementById("popup");
