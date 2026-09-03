@@ -12,5 +12,58 @@
     "best_find": true,
     "description": "Best batch",
     "published": true
+  },
+  {
+    "name": "Corteiz Shorts",
+    "image": "https://i.imgur.com/xE1tliW.png",
+    "price": 105,
+    "currency": "PLN",
+    "categories": [
+      "spodenki"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7487559535?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7487559535",
+    "best_find": false,
+    "description": "Best batch",
+    "published": true
+  },
+  {
+    "name": "air force CDG",
+    "image": "https://image-cdn.hypb.st/https%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F45%2F46%2FNIKE-CDG-X-SUPREME-AIR-FORCE-1-1-34ab7.jpg?fit=max&w=460&q=60",
+    "price": 145,
+    "currency": "PLN",
+    "categories": [
+      "buty"
+    ],
+    "usfans": "https://www.usfans.com/product/3/6539183234?ref=QTAPW5",
+    "weidian": "https://shop1878559752.v.weidian.com/item.html?itemID=6539183234",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "Air Force 1 Utopia Travis Scott",
+    "image": "https://cdn.repcartel.xyz/productimg/0153d753-93ad-444f-887f-8ae62de8b68d.png",
+    "price": 102,
+    "currency": "PLN",
+    "categories": [
+      "buty"
+    ],
+    "usfans": "https://www.usfans.com/product/3/6539183234?ref=QTAPW5",
+    "weidian": "https://shop1878559752.v.weidian.com/item.html?itemID=6539183234",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "Jordan 4",
+    "image": "https://sport4us.pl/wp-content/uploads/2025/07/408452-111-.jpg",
+    "price": 291,
+    "currency": "PLN",
+    "categories": [
+      "buty"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7489453010?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7489453010",
+    "best_find": false,
+    "published": true
   }
 ]
