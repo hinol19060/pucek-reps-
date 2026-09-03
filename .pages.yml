@@ -18,9 +18,10 @@ content:
         required: true
 
       - name: image
-        label: Zdjęcie
-        type: image
+        label: Adres zdjęcia
+        type: string
         required: true
+        description: Wklej bezpośredni link do zdjęcia, np. https://si.geilicdn.com/...jpg
 
       - name: price
         label: Cena
@@ -96,7 +97,7 @@ content:
         label: Widoczny na stronie
         type: boolean
         default: true
-
     operations:
       delete: false
+
       
