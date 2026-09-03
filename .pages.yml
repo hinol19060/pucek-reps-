@@ -1,0 +1,102 @@
+media:
+  input: uploads
+  output: /uploads
+  rename: random
+  categories: [image]
+
+content:
+  - name: products
+    label: Produkty Pucek Reps
+    type: file
+    path: data/cms-products.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Nazwa produktu
+        type: string
+        required: true
+
+      - name: image
+        label: Zdjęcie
+        type: image
+        required: true
+
+      - name: price
+        label: Cena
+        type: number
+        required: true
+
+      - name: currency
+        label: Waluta ceny
+        type: select
+        default: PLN
+        options:
+          values: [PLN, USD, CNY]
+
+      - name: categories
+        label: Kategorie
+        type: select
+        required: true
+        options:
+          multiple: true
+          min: 1
+          values:
+            - name: buty
+              label: Buty
+            - name: bluzy
+              label: Bluzy
+            - name: koszulki
+              label: Koszulki
+            - name: spodnie
+              label: Spodnie
+            - name: spodenki
+              label: Spodenki
+            - name: kurtki
+              label: Kurtki
+            - name: dresy
+              label: Dresy
+            - name: akcesoria
+              label: Akcesoria
+            - name: bielizna
+              label: Bielizna
+            - name: czapki
+              label: Czapki
+            - name: bag
+              label: Bag
+            - name: elektronika
+              label: Elektronika
+
+      - name: usfans
+        label: Link USFans
+        type: string
+        required: false
+
+      - name: weidian
+        label: Link Weidian
+        type: string
+        required: false
+
+      - name: best_find
+        label: Pokaż w Best Finds
+        type: boolean
+        default: false
+
+      - name: best_find_number
+        label: Numer Best Find (bez #)
+        type: number
+        required: false
+
+      - name: description
+        label: Krótki opis
+        type: text
+        required: false
+
+      - name: published
+        label: Widoczny na stronie
+        type: boolean
+        default: true
+
+    operations:
+      delete: false
+      
