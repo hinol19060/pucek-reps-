@@ -1947,7 +1947,7 @@
 
       const widoczne = produkty.filter(p => {
         const pasujeFraza = p.nazwa.toLowerCase().includes(fraza);
-        const pasujeKategoria = aktywnaKategoria === "wszystko" || p.kategoria === aktywnaKategoria;
+        const pasujeKategoria = aktywnaKategoria === "wszystko" || (Array.isArray(p.kategorie) ? p.kategorie.includes(aktywnaKategoria) : p.kategoria === aktywnaKategoria);
         return pasujeFraza && pasujeKategoria;
       });
 
@@ -2355,6 +2355,61 @@
       BEST_FINDS_DO_KATEGORII.forEach(x => produkty.push({...x}));
     }
 
+
+    async function zaladujProduktyCMS() {
+      try {
+        const res = await fetch("data/cms-products.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const dane = await res.json();
+        if (!Array.isArray(dane)) return 0;
+
+        for (let i = produkty.length - 1; i >= 0; i--) {
+          if (produkty[i].zrodlo === "pages-cms") produkty.splice(i, 1);
+        }
+
+        dane.forEach((x, idx) => {
+          if (!x || x.published === false) return;
+
+          const kategorie = Array.isArray(x.categories)
+            ? x.categories.map(v => String(v).trim().toLowerCase()).filter(Boolean)
+            : (x.category ? [String(x.category).trim().toLowerCase()] : []);
+
+          if (!kategorie.length) kategorie.push("akcesoria");
+
+          const waluta = String(x.currency || "PLN").toUpperCase();
+          const cena = (x.price === null || x.price === undefined || x.price === "")
+            ? ""
+            : `${x.price} ${waluta}`;
+
+          const numer = x.best_find_number !== null &&
+                        x.best_find_number !== undefined &&
+                        x.best_find_number !== ""
+            ? String(x.best_find_number).replace(/[^0-9]/g, "")
+            : "";
+
+          const best = x.best_find === true;
+
+          produkty.push({
+            nazwa: String(x.name || (numer ? `Best Find #${numer}` : `Produkt CMS ${idx + 1}`)),
+            cena,
+            kategoria: kategorie[0],
+            kategorie,
+            zdjecie: String(x.image || "").trim(),
+            link: String(x.usfans || "").trim(),
+            weidian: String(x.weidian || "").trim(),
+            opis: best ? "BEST FIND" : String(x.description || ""),
+            bestTag: best && numer ? `#${numer}` : "",
+            zrodlo: "pages-cms"
+          });
+        });
+
+        return dane.length;
+      } catch (e) {
+        console.warn("Pages CMS: nie udało się wczytać data/cms-products.json", e);
+        return 0;
+      }
+    }
+
     function uzupelnijBrakujaceCeny() {
       const bazoweUSD = {
         buty: 42,
@@ -2388,8 +2443,10 @@
       }
       dodajDodatkoweBluzy();
       dodajBestFindsDoKategorii();
-      uzupelnijBrakujaceCeny();
-      renderuj();
+      zaladujProduktyCMS().then(() => {
+        uzupelnijBrakujaceCeny();
+        renderuj();
+      });
     });
 
     const popup = document.getElementById("popup");
@@ -2462,3 +2519,4 @@
 
 </body>
 </html>
+
