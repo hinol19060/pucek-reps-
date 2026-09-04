@@ -38,10 +38,9 @@ content:
       - name: categories
         label: Kategorie
         type: select
-        required: true
+        required: false
         options:
           multiple: true
-          min: 1
           values:
             - name: buty
               label: Buty
@@ -97,7 +96,8 @@ content:
         label: Widoczny na stronie
         type: boolean
         default: true
+
     operations:
       delete: false
 
-      
+
