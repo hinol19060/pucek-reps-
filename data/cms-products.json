@@ -286,5 +286,15 @@
     "weidian": "https://weidian.com/item.html?itemID=7434060627",
     "best_find": false,
     "published": true
+  },
+  {
+    "name": "chrome hearts okulary ",
+    "image": "https://si.geilicdn.com/pcitem2054281945-7a330000019d4da158130a239846_800_759.jpg.webp?w=750&h=750&cp=1",
+    "price": 25,
+    "currency": "PLN",
+    "usfans": "https://www.usfans.com/product/3/7848128678?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7848128678&spider_token=ba19",
+    "best_find": true,
+    "published": true
   }
 ]
