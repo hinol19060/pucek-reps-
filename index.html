@@ -1947,7 +1947,7 @@
 
       const widoczne = produkty.filter(p => {
         const pasujeFraza = p.nazwa.toLowerCase().includes(fraza);
-        const pasujeKategoria = aktywnaKategoria === "wszystko" || (Array.isArray(p.kategorie) ? p.kategorie.includes(aktywnaKategoria) : p.kategoria === aktywnaKategoria);
+        const pasujeKategoria = aktywnaKategoria === "wszystko" || (aktywnaKategoria === "bestfinds" ? String(p.opis || "").trim().toUpperCase() === "BEST FIND" : (Array.isArray(p.kategorie) ? p.kategorie.includes(aktywnaKategoria) : p.kategoria === aktywnaKategoria));
         return pasujeFraza && pasujeKategoria;
       });
 
@@ -2151,7 +2151,7 @@
         } else if (k === "fear of god essentials zip up hooded" || k === "fear of god zip up hooded") {
           p.nazwa = "ESSENTIALS HOODIE";
           p.link = "https://www.usfans.com/product/1/943562748267?ref=QTAPW5"; p.weidian = "";
-          p.zdjecie = "https://cbu01.alicdn.com/img/ibank/O1CN01toq9D81qHJXvhhqf3_!!2219381645470-0-cib.jpg";
+          p.zdjecie = "https://samplestore.pl/wp-content/uploads/2025/09/Fear-of-God-Essentials-Fleece-Hoodie-Light-Heather-Gray-FW24.webp";
         } else if (k === "lacoste hoodies" || k === "lacoste hoodie") {
           p.link = "https://usfans.com/product/3/7523652609?ref=QTAPW5"; p.weidian = "";
           p.zdjecie = "https://sportano.pl/img/b52b588476b8def9e5d485faf958f16f/3/6/3617072871413_20-jpg/bluza-meska-lacoste-sh5545-black-1977045.jpg";
@@ -2313,37 +2313,20 @@
       {nazwa:"Best Find #11", cena:"", kategoria:"bielizna", zdjecie:"https://si.geilicdn.com/pcitem1888214674-40ef0000019af38dd2870a23038e_1012_1012.jpg", link:"https://www.usfans.com/product/3/7823337260?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823337260&spider_token=e6c3", opis:"BEST FIND", bestTag:"#11"},
       {nazwa:"Best Find #12", cena:"", kategoria:"bielizna", zdjecie:"https://si.geilicdn.com/pcitem1888214674-2c940000019acaba1c3c0a2396f4-unadjust_750_750.png", link:"https://www.usfans.com/product/3/7820347241?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820347241&spider_token=c53b", opis:"BEST FIND", bestTag:"#12"},
       {nazwa:"Best Find #13", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/pcitem1788880988-262d00000193909530400a2304aa_1920_1920.jpg", link:"https://www.usfans.com/product/3/7820419903?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820419903&spider_token=554f", opis:"BEST FIND", bestTag:"#13"},
-      {nazwa:"Best Find #14", cena:"", kategoria:"bag", zdjecie:"https://si.geilicdn.com/wdseller1224940191-7307000001835e1ac0320a231273_800_800.jpg", link:"https://www.usfans.com/product/3/7820384997?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820384997&spider_token=3c4e", opis:"BEST FIND", bestTag:"#14"},
       {nazwa:"Best Find #15", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/open1831483949-1831483949-4f560000019b4f5896ef0a8115c2_523_523.jpg", link:"https://www.usfans.com/product/3/7820335267?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820335267&spider_token=4db8", opis:"BEST FIND", bestTag:"#15"},
       {nazwa:"Best Find #16", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/open1610767581-1234478995-3bad0000019774e39c170a8115c2_1400_1020.jpg", link:"https://www.usfans.com/product/3/7823375152?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823375152&spider_token=dc7d", opis:"BEST FIND", bestTag:"#16"},
       {nazwa:"Best Find #17", cena:"", kategoria:"czapki", zdjecie:"https://si.geilicdn.com/pcitem322338468-79c70000018ecdc51d240a2313e0_1074_1074.jpg", link:"https://www.usfans.com/product/3/7842674769?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842674769&spider_token=e9f2", opis:"BEST FIND", bestTag:"#17"},
       {nazwa:"Best Find #18", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1834095317-1855575997-356300000199516fdf150a23b491_1200_1200.jpg", link:"https://www.usfans.com/product/3/7820351137?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820351137&spider_token=4b41", opis:"BEST FIND", bestTag:"#18"},
       {nazwa:"Best Find #19", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-203c0000019a4f23005e0a22d249_1280_1280.jpg", link:"https://www.usfans.com/product/3/7823383060?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823383060&spider_token=8cc0", opis:"BEST FIND", bestTag:"#19"},
       {nazwa:"Best Find #20", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1685879877-252808396-196c00000192b20315430a8133b5_800_800.jpg", link:"https://www.usfans.com/product/3/7823369134?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823369134&spider_token=9b2d", opis:"BEST FIND", bestTag:"#20"},
-      {nazwa:"Best Find #21", cena:"", kategoria:"spodnie", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-58380000019ae86f427c0a23b491_800_800.jpg", link:"https://www.usfans.com/product/3/7823359144?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823359144&spider_token=28f6", opis:"BEST FIND", bestTag:"#21"},
-      {nazwa:"Best Find #22", cena:"", kategoria:"spodnie", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-16d20000019aef5276180a23b491_800_800.jpg", link:"https://www.usfans.com/product/3/7823357150?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823357150&spider_token=fd33", opis:"BEST FIND", bestTag:"#22"},
-      {nazwa:"Best Find #23", cena:"", kategoria:"spodnie", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-56cc0000019ad95784640aa08245_640_800.jpg", link:"https://www.usfans.com/product/3/7820412761?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820412761&spider_token=42d0", opis:"BEST FIND", bestTag:"#23"},
       {nazwa:"Best Find #24", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1629391697-1234478995-0933000001962eafaafd0aa0834c_1920_1920.jpg", link:"https://www.usfans.com/product/3/7820412753?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820412753&spider_token=eb45", opis:"BEST FIND", bestTag:"#24"},
       {nazwa:"Best Find #25", cena:"", kategoria:"elektronika", zdjecie:"https://si.geilicdn.com/open1779371725-1234478995-1b5a0000019503d52faa0a22d249_1080_1080.jpg", link:"https://www.usfans.com/product/3/7820367137?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820367137&spider_token=47b4", opis:"BEST FIND", bestTag:"#25"},
       {nazwa:"Best Find #26", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/pcitem1888214674-69080000019a733a21310a20e273_4590_4590.jpg", link:"https://www.usfans.com/product/3/7842303349?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842303349&spider_token=442b", opis:"BEST FIND", bestTag:"#26"},
-      {nazwa:"Best Find #27", cena:"", kategoria:"kurtki", zdjecie:"https://si.geilicdn.com/open1696052269-1234478995-6ac5000001952daf991d0a22d249_1600_1600.jpg", link:"https://www.usfans.com/product/3/7842605413?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842605413&spider_token=fe0b", opis:"BEST FIND", bestTag:"#27"},
-      {nazwa:"Best Find #28", cena:"", kategoria:"dresy", zdjecie:"https://si.geilicdn.com/open1685879877-252808396-4643000001956e77aed10a23b4de_1280_1280.jpg", link:"https://www.usfans.com/product/3/7845619378?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845619378&spider_token=e09b", opis:"BEST FIND", bestTag:"#28"},
       {nazwa:"Best Find #29", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-11f30000019a3adc95cf0a8133b0_1080_1080.jpg", link:"https://www.usfans.com/product/3/7845670970?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845670970&spider_token=d82a", opis:"BEST FIND", bestTag:"#29"},
-      {nazwa:"Best Find #30", cena:"", kategoria:"dresy", zdjecie:"https://si.geilicdn.com/pcitem2058410353-7ada000001a0445835bf0a239646_800_800.jpg", link:"https://www.usfans.com/product/3/7845635198?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845635198&spider_token=6a3a", opis:"BEST FIND", bestTag:"#30"},
-      {nazwa:"Best Find #31", cena:"", kategoria:"dresy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-70460000019e25a1ed130a23b4de_750_750.jpg", link:"https://www.usfans.com/product/3/7845720034?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845720034&spider_token=d70f", opis:"BEST FIND", bestTag:"#31"},
-      {nazwa:"Best Find #32", cena:"", kategoria:"kurtki", zdjecie:"https://si.geilicdn.com/pcitem1888214674-216a0000019a4a570fae0a23037f_4590_4590.jpg", link:"https://www.usfans.com/product/3/7845682766?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845682766&spider_token=f63e", opis:"BEST FIND", bestTag:"#32"},
       {nazwa:"Best Find #33", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/pcitem1888214674-56290000019a58624dc90a23037f_4590_4590.jpg", link:"https://www.usfans.com/product/3/7845627398?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845627398&spider_token=cc66", opis:"BEST FIND", bestTag:"#33"},
-      {nazwa:"Best Find #34", cena:"", kategoria:"kurtki", zdjecie:"https://si.geilicdn.com/pcitem1888214674-16b10000019a4924ed920a210139-unadjust_750_750.png", link:"https://www.usfans.com/product/3/7842672717?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842672717&spider_token=4b79", opis:"BEST FIND", bestTag:"#34"},
       {nazwa:"Best Find #35", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-39160000019ad5eb66ab0a23b491_1080_1080.jpg", link:"https://www.usfans.com/product/3/7845692604?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845692604&spider_token=dac8", opis:"BEST FIND", bestTag:"#35"},
       {nazwa:"Best Find #36", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/pcitem1963031416-625a0000019850032bac0a21146b_1200_1200.jpg", link:"https://www.usfans.com/product/3/7842674761?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842674761&spider_token=e861", opis:"BEST FIND", bestTag:"#36"},
-      {nazwa:"Best Find #36", cena:"", kategoria:"kurtki", zdjecie:"https://si.geilicdn.com/pcitem1963031416-625a0000019850032bac0a21146b_1200_1200.jpg", link:"https://www.usfans.com/product/3/7842674761?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842674761&spider_token=e861", opis:"BEST FIND", bestTag:"#36"},
-      {nazwa:"Best Find #37", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-146d0000019a4f225c980a8115c2_1920_1920.jpg", link:"https://www.usfans.com/product/3/7842325083?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842325083&spider_token=7128", opis:"BEST FIND", bestTag:"#37"},
-      {nazwa:"Best Find #38", cena:"", kategoria:"koszulki", zdjecie:"https://si.geilicdn.com/open1746485826-1234478995-123400000196dc518a090a8115c2_800_800.jpg", link:"https://www.usfans.com/product/3/7823420756?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823420756&spider_token=2058", opis:"BEST FIND", bestTag:"#38"},
-      {nazwa:"Best Find #39", cena:"", kategoria:"koszulki", zdjecie:"https://si.geilicdn.com/pcitem901880731787-332e00000196ddbae9290a811411_1920_1920.jpg", link:"https://www.usfans.com/product/3/7820427699?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820427699&spider_token=a3c2", opis:"BEST FIND", bestTag:"#39"},
-      {nazwa:"Best Find #40", cena:"", kategoria:"koszulki", zdjecie:"https://si.geilicdn.com/pcitem1852028364-640f000001953ecb73260a23037f-unadjust_1600_1600.png", link:"https://www.usfans.com/product/3/7842690399?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842690399&spider_token=8ef1", opis:"BEST FIND", bestTag:"#40"},
-      {nazwa:"Best Find #41", cena:"", kategoria:"spodenki", zdjecie:"https://si.geilicdn.com/pcitem1888214674-60ab0000019837491a540a20e284-unadjust_642_535.png", link:"https://www.usfans.com/product/3/7820341253?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820341253&spider_token=2993", opis:"BEST FIND", bestTag:"#41"},
-      {nazwa:"Best Find #43", cena:"", kategoria:"koszulki", zdjecie:"https://si.geilicdn.com/open1704625661-1234478995-7a7300000197d524b77a0a22d249_1200_1200.jpg", link:"https://www.usfans.com/product/3/7845694550?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845694550&spider_token=29e4", opis:"BEST FIND", bestTag:"#43"},
-      {nazwa:"Best Find #43", cena:"", kategoria:"spodenki", zdjecie:"https://si.geilicdn.com/open1704625661-1234478995-7a7300000197d524b77a0a22d249_1200_1200.jpg", link:"https://www.usfans.com/product/3/7845694550?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845694550&spider_token=29e4", opis:"BEST FIND", bestTag:"#43"}
+      {nazwa:"Best Find #37", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-146d0000019a4f225c980a8115c2_1920_1920.jpg", link:"https://www.usfans.com/product/3/7842325083?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842325083&spider_token=7128", opis:"BEST FIND", bestTag:"#37"}
     ];
 
     function dodajBestFindsDoKategorii() {
@@ -2370,11 +2353,14 @@
         dane.forEach((x, idx) => {
           if (!x || x.published === false) return;
 
-          const kategorie = Array.isArray(x.categories)
+          let kategorie = Array.isArray(x.categories)
             ? x.categories.map(v => String(v).trim().toLowerCase()).filter(Boolean)
             : (x.category ? [String(x.category).trim().toLowerCase()] : []);
 
-          if (!kategorie.length) kategorie.push("akcesoria");
+          const tylkoBestFinds = kategorie.includes("bestfinds");
+          kategorie = kategorie.filter(k => k !== "bestfinds");
+
+          // Brak zwykłej kategorii jest dozwolony.
 
           const waluta = String(x.currency || "PLN").toUpperCase();
           const cena = (x.price === null || x.price === undefined || x.price === "")
@@ -2387,12 +2373,12 @@
             ? String(x.best_find_number).replace(/[^0-9]/g, "")
             : "";
 
-          const best = x.best_find === true;
+          const best = x.best_find === true || tylkoBestFinds;
 
           produkty.push({
             nazwa: String(x.name || (numer ? `Best Find #${numer}` : `Produkt CMS ${idx + 1}`)),
             cena,
-            kategoria: kategorie[0],
+            kategoria: kategorie[0] || "",
             kategorie,
             zdjecie: String(x.image || "").trim(),
             link: String(x.usfans || "").trim(),
