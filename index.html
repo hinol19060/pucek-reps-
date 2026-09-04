@@ -520,8 +520,8 @@
           <input id="search" class="search" type="search" placeholder="Szukaj produktu..." />
           <div class="filters-scroll">
             <div class="filters">
-              <a class="best-finds-filter-link" href="#best-finds">Best Finds</a>
-              <button class="filter active" data-category="wszystko">Wszystko</button>
+              <button class="filter active" data-category="bestfinds">Best Finds</button>
+              <button class="filter" data-category="wszystko">Wszystko</button>
               <button class="filter" data-category="buty">Buty</button>
               <button class="filter" data-category="bluzy">Bluzy</button>
               <button class="filter" data-category="koszulki">Koszulki</button>
@@ -1931,7 +1931,7 @@
     const searchEl = document.getElementById("search");
     const emptyEl = document.getElementById("empty");
     const filterButtons = [...document.querySelectorAll(".filter")];
-    let aktywnaKategoria = "wszystko";
+    let aktywnaKategoria = "bestfinds";
 
     function bezpiecznyTekst(value) {
       return String(value)
@@ -1947,7 +1947,7 @@
 
       const widoczne = produkty.filter(p => {
         const pasujeFraza = p.nazwa.toLowerCase().includes(fraza);
-        const pasujeKategoria = aktywnaKategoria === "wszystko" || (aktywnaKategoria === "bestfinds" ? String(p.opis || "").trim().toUpperCase() === "BEST FIND" : (Array.isArray(p.kategorie) ? p.kategorie.includes(aktywnaKategoria) : p.kategoria === aktywnaKategoria));
+        const pasujeKategoria = aktywnaKategoria === "wszystko" || (aktywnaKategoria === "bestfinds" ? (p.isBestFind === true || String(p.opis || "").trim().toUpperCase() === "BEST FIND") : (Array.isArray(p.kategorie) ? p.kategorie.includes(aktywnaKategoria) : p.kategoria === aktywnaKategoria));
         return pasujeFraza && pasujeKategoria;
       });
 
@@ -2360,8 +2360,6 @@
           const tylkoBestFinds = kategorie.includes("bestfinds");
           kategorie = kategorie.filter(k => k !== "bestfinds");
 
-          // Brak zwykłej kategorii jest dozwolony.
-
           const waluta = String(x.currency || "PLN").toUpperCase();
           const cena = (x.price === null || x.price === undefined || x.price === "")
             ? ""
@@ -2385,6 +2383,7 @@
             weidian: String(x.weidian || "").trim(),
             opis: best ? "BEST FIND" : String(x.description || ""),
             bestTag: best && numer ? `#${numer}` : "",
+            isBestFind: best,
             zrodlo: "pages-cms"
           });
         });
@@ -2505,4 +2504,3 @@
 
 </body>
 </html>
-
