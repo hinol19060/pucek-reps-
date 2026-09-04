@@ -42,6 +42,8 @@ content:
         options:
           multiple: true
           values:
+            - name: bestfinds
+              label: Tylko Best Finds
             - name: buty
               label: Buty
             - name: bluzy
@@ -99,5 +101,4 @@ content:
 
     operations:
       delete: false
-
 
