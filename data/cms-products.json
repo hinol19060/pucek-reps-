@@ -839,5 +839,18 @@
     "weidian": "https://weidian.com/item.html?itemID=7487573307",
     "best_find": false,
     "published": true
+  },
+  {
+    "name": "the north face ",
+    "image": "https://si.geilicdn.com/pcitem1425026222-3ec000000199e4a07d640a20e2c5_1440_1440.jpg",
+    "price": 200,
+    "currency": "PLN",
+    "categories": [
+      "kurtki"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7617186136?ref=QTAPW5",
+    "weidian": "https://shop1789988531.v.weidian.com/item.html?itemID=7617186136&spider_token=2175",
+    "best_find": false,
+    "published": true
   }
 ]
