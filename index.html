@@ -1947,7 +1947,17 @@
 
       const widoczne = produkty.filter(p => {
         const pasujeFraza = p.nazwa.toLowerCase().includes(fraza);
-        const pasujeKategoria = aktywnaKategoria === "wszystko" || (aktywnaKategoria === "bestfinds" ? (p.isBestFind === true || String(p.opis || "").trim().toUpperCase() === "BEST FIND") : (Array.isArray(p.kategorie) ? p.kategorie.includes(aktywnaKategoria) : p.kategoria === aktywnaKategoria));
+        const jestBestFind = p.isBestFind === true || String(p.opis || "").trim().toUpperCase() === "BEST FIND";
+        const pasujeKategoria =
+          aktywnaKategoria === "bestfinds"
+            ? jestBestFind
+            : aktywnaKategoria === "wszystko"
+              ? !jestBestFind
+              : !jestBestFind && (
+                  Array.isArray(p.kategorie)
+                    ? p.kategorie.includes(aktywnaKategoria)
+                    : p.kategoria === aktywnaKategoria
+                );
         return pasujeFraza && pasujeKategoria;
       });
 
@@ -2310,32 +2320,10 @@
 
 
     const BEST_FINDS_DO_KATEGORII = [
-      {nazwa:"Best Find #11", cena:"", kategoria:"bielizna", zdjecie:"https://si.geilicdn.com/pcitem1888214674-40ef0000019af38dd2870a23038e_1012_1012.jpg", link:"https://www.usfans.com/product/3/7823337260?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823337260&spider_token=e6c3", opis:"BEST FIND", bestTag:"#11"},
-      {nazwa:"Best Find #12", cena:"", kategoria:"bielizna", zdjecie:"https://si.geilicdn.com/pcitem1888214674-2c940000019acaba1c3c0a2396f4-unadjust_750_750.png", link:"https://www.usfans.com/product/3/7820347241?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820347241&spider_token=c53b", opis:"BEST FIND", bestTag:"#12"},
-      {nazwa:"Best Find #13", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/pcitem1788880988-262d00000193909530400a2304aa_1920_1920.jpg", link:"https://www.usfans.com/product/3/7820419903?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820419903&spider_token=554f", opis:"BEST FIND", bestTag:"#13"},
-      {nazwa:"Best Find #15", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/open1831483949-1831483949-4f560000019b4f5896ef0a8115c2_523_523.jpg", link:"https://www.usfans.com/product/3/7820335267?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820335267&spider_token=4db8", opis:"BEST FIND", bestTag:"#15"},
-      {nazwa:"Best Find #16", cena:"", kategoria:"akcesoria", zdjecie:"https://si.geilicdn.com/open1610767581-1234478995-3bad0000019774e39c170a8115c2_1400_1020.jpg", link:"https://www.usfans.com/product/3/7823375152?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823375152&spider_token=dc7d", opis:"BEST FIND", bestTag:"#16"},
-      {nazwa:"Best Find #17", cena:"", kategoria:"czapki", zdjecie:"https://si.geilicdn.com/pcitem322338468-79c70000018ecdc51d240a2313e0_1074_1074.jpg", link:"https://www.usfans.com/product/3/7842674769?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842674769&spider_token=e9f2", opis:"BEST FIND", bestTag:"#17"},
-      {nazwa:"Best Find #18", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1834095317-1855575997-356300000199516fdf150a23b491_1200_1200.jpg", link:"https://www.usfans.com/product/3/7820351137?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820351137&spider_token=4b41", opis:"BEST FIND", bestTag:"#18"},
-      {nazwa:"Best Find #19", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-203c0000019a4f23005e0a22d249_1280_1280.jpg", link:"https://www.usfans.com/product/3/7823383060?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823383060&spider_token=8cc0", opis:"BEST FIND", bestTag:"#19"},
-      {nazwa:"Best Find #20", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1685879877-252808396-196c00000192b20315430a8133b5_800_800.jpg", link:"https://www.usfans.com/product/3/7823369134?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7823369134&spider_token=9b2d", opis:"BEST FIND", bestTag:"#20"},
-      {nazwa:"Best Find #24", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1629391697-1234478995-0933000001962eafaafd0aa0834c_1920_1920.jpg", link:"https://www.usfans.com/product/3/7820412753?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820412753&spider_token=eb45", opis:"BEST FIND", bestTag:"#24"},
-      {nazwa:"Best Find #25", cena:"", kategoria:"elektronika", zdjecie:"https://si.geilicdn.com/open1779371725-1234478995-1b5a0000019503d52faa0a22d249_1080_1080.jpg", link:"https://www.usfans.com/product/3/7820367137?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7820367137&spider_token=47b4", opis:"BEST FIND", bestTag:"#25"},
-      {nazwa:"Best Find #26", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/pcitem1888214674-69080000019a733a21310a20e273_4590_4590.jpg", link:"https://www.usfans.com/product/3/7842303349?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842303349&spider_token=442b", opis:"BEST FIND", bestTag:"#26"},
-      {nazwa:"Best Find #29", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-11f30000019a3adc95cf0a8133b0_1080_1080.jpg", link:"https://www.usfans.com/product/3/7845670970?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845670970&spider_token=d82a", opis:"BEST FIND", bestTag:"#29"},
-      {nazwa:"Best Find #33", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/pcitem1888214674-56290000019a58624dc90a23037f_4590_4590.jpg", link:"https://www.usfans.com/product/3/7845627398?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845627398&spider_token=cc66", opis:"BEST FIND", bestTag:"#33"},
-      {nazwa:"Best Find #35", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-39160000019ad5eb66ab0a23b491_1080_1080.jpg", link:"https://www.usfans.com/product/3/7845692604?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7845692604&spider_token=dac8", opis:"BEST FIND", bestTag:"#35"},
-      {nazwa:"Best Find #36", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/pcitem1963031416-625a0000019850032bac0a21146b_1200_1200.jpg", link:"https://www.usfans.com/product/3/7842674761?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842674761&spider_token=e861", opis:"BEST FIND", bestTag:"#36"},
-      {nazwa:"Best Find #37", cena:"", kategoria:"bluzy", zdjecie:"https://si.geilicdn.com/open1878930789-1234478995-146d0000019a4f225c980a8115c2_1920_1920.jpg", link:"https://www.usfans.com/product/3/7842325083?ref=QTAPW5", weidian:"https://weidian.com/item.html?itemID=7842325083&spider_token=7128", opis:"BEST FIND", bestTag:"#37"}
     ];
 
     function dodajBestFindsDoKategorii() {
-      const keys = new Set(BEST_FINDS_DO_KATEGORII.map(x => `${x.link}|${x.kategoria}`));
-      for (let i = produkty.length - 1; i >= 0; i--) {
-        const key = `${produkty[i].link}|${produkty[i].kategoria}`;
-        if (keys.has(key)) produkty.splice(i, 1);
-      }
-      BEST_FINDS_DO_KATEGORII.forEach(x => produkty.push({...x}));
+      // Best Finds są widoczne wyłącznie w zakładce Best Finds.
     }
 
 
@@ -2372,6 +2360,7 @@
             : "";
 
           const best = x.best_find === true || tylkoBestFinds;
+          if (best) kategorie = [];
 
           produkty.push({
             nazwa: String(x.name || (numer ? `Best Find #${numer}` : `Produkt CMS ${idx + 1}`)),
@@ -2393,6 +2382,19 @@
         console.warn("Pages CMS: nie udało się wczytać data/cms-products.json", e);
         return 0;
       }
+    }
+
+
+    function poprawKategorieSpecjalne() {
+      produkty.forEach(p => {
+        if (String(p.nazwa || "").trim().toLowerCase() === "air force 1 rope lace white") {
+          p.kategoria = "buty";
+          p.kategorie = ["buty"];
+          p.isBestFind = false;
+          if (String(p.opis || "").trim().toUpperCase() === "BEST FIND") p.opis = "";
+          p.bestTag = "";
+        }
+      });
     }
 
     function uzupelnijBrakujaceCeny() {
@@ -2429,6 +2431,7 @@
       dodajDodatkoweBluzy();
       dodajBestFindsDoKategorii();
       zaladujProduktyCMS().then(() => {
+        poprawKategorieSpecjalne();
         uzupelnijBrakujaceCeny();
         renderuj();
       });
