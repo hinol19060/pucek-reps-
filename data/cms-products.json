@@ -956,5 +956,18 @@
     "weidian": "https://weidian.com/item.html?itemID=7698882776",
     "best_find": false,
     "published": true
+  },
+  {
+    "name": "bape tee ",
+    "image": "https://si.geilicdn.com/pcitem901940024420-00f9000001985aaa52dd0a239646-unadjust_1097_1094.png",
+    "price": 55,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7518283995?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7518283995",
+    "best_find": false,
+    "published": true
   }
 ]
