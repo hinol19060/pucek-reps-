@@ -852,5 +852,109 @@
     "weidian": "https://shop1789988531.v.weidian.com/item.html?itemID=7617186136&spider_token=2175",
     "best_find": false,
     "published": true
+  },
+  {
+    "name": "baggy jeans ",
+    "image": "https://si.geilicdn.com/open1624782517-1624782517-5add00000199bdf95f110a23b491_2500_2500.jpg",
+    "price": 90,
+    "currency": "PLN",
+    "categories": [
+      "spodnie"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7566733305?ref=QTAPW5",
+    "weidian": "https://shop1717053203.v.weidian.com/item.html?itemID=7566733305",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "lv skate budget ",
+    "image": "https://si.geilicdn.com/open1624782517-1624782517-4ae700000199ade973a80a23b4de_800_800.jpg",
+    "price": 208,
+    "currency": "PLN",
+    "categories": [
+      "buty"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7599688808?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7599688808",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "pasek burrbery ",
+    "image": "https://si.geilicdn.com/pcitem901944018858-32b20000019738c7971e0a20e284_1279_1706.jpg",
+    "price": 90,
+    "currency": "PLN",
+    "categories": [
+      "akcesoria"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7489510606?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7489510606",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "zara jeans ",
+    "image": "https://si.geilicdn.com/open1831483949-1831483949-37c90000019d001ccd720a8133b0_800_800.jpg",
+    "price": 90,
+    "currency": "PLN",
+    "categories": [
+      "spodnie"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7713777974?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7713777974",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "dresy",
+    "image": "https://si.geilicdn.com/pcitem901953762372-07150000019786ebf0e00a23a2b8_800_800.jpg",
+    "price": 110,
+    "currency": "PLN",
+    "categories": [
+      "spodnie"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7492897516?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7492897516",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "budget jordan 4 ",
+    "image": "data:image/webp;base64,UklGRtgJAABXRUJQVlA4IMwJAACQLACdASqVAI4APkUejESioaESWnWoKAREtIBr0FSLAnhD5Uvcvtr/TuVXER7n/1XC/8f9QL1P/iP6D6uECzSz0CPbn6l/qPVqmleCPNU8arwtfJ/YA/mX9Y9Cf/n/1H5ge4/6m/7XuFfy/+s/7n+6e2X7LP3G9lP9dC5cQCc4uIBOcTa33TM9M2Dlyuz2SnUp4WoTozzR4RJZVsb66YprkUUtgnCCSfvpz0MnuYBUPIg3bsNvUR6RKPRpwaZYDIm+2vgrWNfOo1VyHpDruqvnFoEaio0Fp9850hlzkNGYTeNdqwiSx4nGKlElABT6efH2mxPR37ZBkyHdGdhCiz7bdgbzFhvWKcH8KbvFGQ1hp1KHkmsCRtn5mpmcGLiJc4CFHmgHUYzUCP05mhRyWFbSofxRRk8P6Aih6oDzblnrxTD6HlcMiSmRRU+gt6oX59a2kdBmIm+hR9z/JvfUsntdToUWCcw/RR4pNszKIAD+/iRgACEmumfIC3pBB2R9LgvJuHN/RNhRQPi9LbMpGQ2vfFbAs7vpK7PILXXtrD8zzIiicbgB3/RA31ukuMUsSgnTnOgJLmy5lD9WSj0u8LNu7FeoBWUslP/vcs/oWMx/JqP49q582OvwAatv1zHI12b8OBZlJH5ve4EmLsQnAiuOBs4AtzhYc/T72iwCGqGmn6HxSvi8OP6yKBnFNdRmljCgk4UpegIw73stF9jJi1Bkx/R7Wq8AvKtA6nT8+SdnJZeggCd7xVKa6CObzB9MZu7WO2iwxMgY2AP2kqkn71LgAbNvPyvP9u9BU6Y9XR0xFFGAOq6L5Airg2m+FJ0G8v5SlJNSu0rPv0hawwBliDZjDstjN3c1DbqztGWwNri48Lc1thETNlK4XOI6fY1Pziyq3FnLqQ92msJRkgwpyyBwJevMMd4LZkoDLgBl/Urr669p86jNxHd+1Pxn9LNq460prVC8+JduKZjGf9s9Q2ocqOP+WF6NInjEY++aaHOQ+sOYtB7a+zJnSWN8/LSK253w53SRxOz4wVZ4dzJLlcAjEiTgSjPv0okkOVgj6yuJXF55W9Rn83TTGAvzWtbIG5i49PuYRMbNnrni+XQREw9FsifuAzbShKbRBrxAWeBx3sEr0Mfj3a+Ii9cY0oMgnaVP4dohP7iOVqfK2ouM6c+eeXgW4oLhFnFTSLRwfpbpKfL6MuHe/FDwe9e7YM2ko+1NmyvTmGvercIkTAMlT2SdtrwGwEH9OZXDTfXWedb2kJ9GzxkDvARp9r476v0G8ZpBjGDqwr+N/uOWN/zO5HrjmQ8+jjz9+QwJdMsLMgyyEHAdbmFdrc2bWKEd+yogfM50tc4hyLAR26SD3uiTlGzbm4ATUUAtuun5IjXyEMuQdTSUyfGdUK7/C2+QjMfksY83TU5QESixF/ZNLaElLuiVNxC726M3WeHOkZ2nE1ZTHF4Jo/lFvfstsEEegCKPU5d/MWZME15JDJPmGzv6ZXegWnudmLuRy7B7SIK0R5br08q6JeQ8ORTE0Kn557IAv2eSNe+Kq3iDp/Nyc44wsz9oJ80pwaGlXW03msO30cnMiG6/tP56sBpEwrIRbAY4iwa4algf+Sy4h8V3dxF5wgFCsiC3cV7Dbmkkg1MBjuyoEJlN+aEUwjndiLg+Wd/pE1ZMAQ2gHNE/8cliU6cz8jzdd4uavHvmEZ5AJ9Gzsusbbqf9oZIrGZyiC4kyBdc9+W1nSUBH0YoE4y9Ex4fxXesPSUWX16vpMp6fnIsFJUh7JA2rdYAaPPJ32crCeUSneLbEdtpEBlpPokFPYFSLQq6Om+4kfYHLoIsVgFqVKoRqMzyrFbVO+UDqe3/5G2/ldlGN+GGNAL196IDIi0DL3tx8faPV9UvoLAYIOr9/ZpXFb1CLNpwWxdZjX6Q4vV9vhnWOMXu1lHI2EPNZCWw2yxSMfMz8eIlhwog9IRaKEZCFmuUpU2Bwq+5ooFbU15UTwgEBZ6d0PR7Wp/TeOZ63KtVKAw5KvwjSo4LML8Zzv4uQ3Y9Y6eY3SdBz8f/5FyO7tm38MlNTg3WNyp6AguuWb45n1vjF7aGjCNRvxwEJdO91OOqObbfTENgJlLeF2noE0jTh8+S/h8Ir+34WZhNNx8t5h/UdmOVvs6aRp9zcmG1L+tScZTxPi7coVaIEgmdhrgpd+Dq4ASw+ca/mO7m+MnXxNdQZjsgX0u2OBFq658crHGsG0v8BjAUCISbggEmon94oVYXBcfWwtrMMFSM5OK5qh/WUeK7evkEDh2YsS/jEkg0LQ9Iwb10gJNqO7A5BJfFyD066wWRkSf498uXh7JAvORb8X6/yPhcuZ4Lz/kWTLqkV+Ut+ruqYO4b9e/A0vlbl+uYZgkhdo64TDhxtt9l/jXz7zpZ45pWEZk9VkuPjpRpIj2oiPaahZufl7aDg1LeNBNV3xFmFcfSusMomV8n+PO+suh42fhOFhfvnz50yf43LapJlz8jpYQAucbECxMjk2jBvOU4Q/PqJPZkG4U58bJ2E3jQjPgnskVcsmsAvJ/qgDbX/7iEPYYPlXgUHb6YN6+QZIf1IY6FVCjJmH2+Mdm1UgReAkOHrWGlo7aIrNNhqY/j5F2JBoX6pxamy/tBSOhEaeJGz4fieGaq6QQOgESppt5SEYKR0P7ctJWVsEQ+Z1ferPZPu/EJgLOQSWElzMTAygWIjc5yZG+MkbO6QeifZj5CHmorARdo/Maz7DBFWyDK/miXQSk3IEmZ2NzLWUCnnpTIzJkfNaRiKV2D0WiEX1fLd1RfeEUR2ElFxssQPZjIOwmzrhbJyuPBbphFnPhdpfrZLpGRpdWRk5+kW6AMBIFPkT+oelrYk3fWtMACaHzNPX0SH/mWEjNgpCreJL1JUFrg5z0UG1duutEtd11seWv9XXRQy6ij+4bWbuWkJA3D6E5ueHxxz1rd+5YeLO/zurnFRzqI78O9YtgJFet7jSqcNr9yXOAmzyNd1fUNic2SfqYZM8tm9ehOBxpoKD8QS+8g5T2rDEoO1qKHQOpQ7lITMtSqGc8I1KcYKylhbRjmGLQ16D5AMv4HuBeEeKrma/gUUXx7BJC3EZnYM8Y2RO9boSeMe97aV7o/R6z5jxufvbzOc5gRdwmVCOn7S0MAamWjEF90Qjxw86BrLjzzl1Gs+yQGi0VkLHcEebiOfZEbEHbTuFfj9LBIFDxCWAF8iAT8E7e1WqkrVlOqXQ1p3oeeoHHs+NDhuQshsq8D0AIfc/kglcmwKh1Bn3uwLIoHbcggoxs0e2k8uhBEfLtK5PelUKRwrQrTwTeHQVPLZcNYfarMmLEDoInr/cwVsYzFBgDErfCpeAAA=",
+    "price": 0,
+    "currency": "PLN",
+    "categories": [
+      "buty"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7575161708?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7575161708",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "mertra dres ",
+    "image": "https://si.geilicdn.com/open1831483949-1831483949-00180000019d8ab4693e0a231226_1702_1276.jpg",
+    "price": 105,
+    "currency": "PLN",
+    "categories": [
+      "spodnie"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7738304876?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7738304876",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "budget lanvin (dobre sa)",
+    "image": "https://si.geilicdn.com/pcitem902012928833-10ab0000019b87dadf6e0a8133cc_1440_1440.jpg",
+    "price": 200,
+    "currency": "PLN",
+    "categories": [
+      "buty"
+    ],
+    "usfans": "https://usfans.com/product/3/7698882776?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7698882776",
+    "best_find": false,
+    "published": true
   }
 ]
