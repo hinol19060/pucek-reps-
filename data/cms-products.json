@@ -969,5 +969,158 @@
     "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7518283995",
     "best_find": false,
     "published": true
+  },
+  {
+    "name": "ck gacie",
+    "image": "https://si.geilicdn.com/open1876913719-252808396-77410000019fcaa2f8360a231226_1200_1200.jpg.webp?w=750&h=750&cp=1",
+    "price": 20,
+    "currency": "PLN",
+    "categories": [
+      "bestfinds"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7843953223?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7843953223",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "jersey",
+    "image": "https://si.geilicdn.com/open1876913719-252808396-0f1d0000019fd0d255e90a231226_1282_1282.jpg.webp?w=750&h=750&cp=1",
+    "price": 40,
+    "currency": "PLN",
+    "categories": [
+      "bestfinds"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7843961119?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7843961119",
+    "best_find": true,
+    "published": true
+  },
+  {
+    "name": "gym shark",
+    "image": "https://si.geilicdn.com/open1876913719-252808396-13a00000019fd0ce823d0aa08269_800_1200.jpg",
+    "price": 35,
+    "currency": "PLN",
+    "categories": [
+      "bestfinds"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7843957201?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7843957201",
+    "best_find": true,
+    "published": true
+  },
+  {
+    "name": "star ",
+    "image": "https://si.geilicdn.com/open1876913719-252808396-0bbb0000019fd0c7ecf30a23b491_1200_1200.jpg.webp?w=750&h=750&cp=1",
+    "price": 115,
+    "currency": "PLN",
+    "usfans": "https://www.usfans.com/product/3/7846945420?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7846945420",
+    "best_find": true,
+    "published": true
+  },
+  {
+    "name": "ralph tee",
+    "image": "https://si.geilicdn.com/open1876913719-252808396-18710000019ff04ec1890a22d249_1280_1280.jpg.webp?w=750&h=750&cp=1",
+    "price": 50,
+    "currency": "PLN",
+    "categories": [
+      "bestfinds"
+    ],
+    "usfans": "https://www.usfans.com/product/3/7844059795?ref=QTAPW5",
+    "weidian": "https://weidian.com/item.html?itemID=7844059795",
+    "best_find": true,
+    "published": true
+  },
+  {
+    "name": "v bucks tee",
+    "image": "https://si.geilicdn.com/open1794541533-252808396-647e0000019b011bc3d80a8133b0_334_334.jpg",
+    "price": 30,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://usfans.com/product/3/7628308201?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7628308201",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "v lone tee ",
+    "image": "https://si.geilicdn.com/open1794541533-252808396-24870000019975c2157d0a231226_800_800.jpg",
+    "price": 40,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://usfans.com/product/3/7555979575?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7555979575",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "stussy x bape tee ",
+    "image": "https://si.geilicdn.com/pcitem901908522262-007e00000195224c6e840a811411-unadjust_2117_1880.png",
+    "price": 45,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://usfans.com/product/3/7549738106?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7549738106",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "supreme tee ",
+    "image": "https://si.geilicdn.com/pcitem901940024420-467500000197a00877990a81347d_2160_2160.jpg",
+    "price": 56,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://usfans.com/product/3/7497838669?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7497838669",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "supreme jersey ",
+    "image": "https://si.geilicdn.com/pcitem901964032459-6d400000019cd6d65ea70a207569_1280_1280.jpg",
+    "price": 130,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://usfans.com/product/3/7554397446?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7554397446",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "nike compression ",
+    "image": "https://si.geilicdn.com/pcitem901940024420-0d3600000196c30e501f0a23047e_1080_1620.jpg",
+    "price": 50,
+    "currency": "PLN",
+    "categories": [
+      "koszulki"
+    ],
+    "usfans": "https://usfans.com/product/3/7549704232?ref=QTAPW5",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7549704232",
+    "best_find": false,
+    "published": true
+  },
+  {
+    "name": "nike nocta ",
+    "image": "https://si.geilicdn.com/open1686456899-1234478995-0c7f000001987175b9590a22d249-unadjust_500_500.png",
+    "price": 170,
+    "currency": "PLN",
+    "categories": [
+      "dresy"
+    ],
+    "usfans": "https://usfans.com/product/3/7548778285?ref=vector&am_redirect=true",
+    "weidian": "https://shop1794541533.v.weidian.com/item.html?itemID=7548778285",
+    "best_find": false,
+    "published": true
   }
 ]
