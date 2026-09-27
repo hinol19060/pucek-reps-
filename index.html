@@ -660,6 +660,69 @@ section#finds{padding-top:105px}
   .street-scroll-note{margin-top:38px}
 }
 
+
+/* CENTERED HERO + REGISTRATION NOTE */
+.street-hero-centered{
+  display:flex;
+  min-height:calc(100vh - 72px);
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.street-hero-centered .street-title{margin-left:auto;margin-right:auto}
+.street-description{
+  max-width:650px;
+  margin:32px auto 0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.75;
+  text-align:center;
+}
+.street-hero-centered .street-actions{
+  justify-content:center;
+  margin-top:28px;
+}
+.street-register-note{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:20px;
+  padding:12px 18px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:999px;
+  background:rgba(255,255,255,.035);
+  color:#9e9e98;
+  font-size:12px;
+  line-height:1.45;
+  transition:.2s ease;
+}
+.street-register-note strong{color:#f4f4f2}
+.street-register-note:hover{
+  border-color:rgba(255,255,255,.24);
+  background:rgba(255,255,255,.06);
+  transform:translateY(-1px);
+}
+@media(max-width:720px){
+  .street-hero-centered{min-height:calc(100svh - 64px)}
+  .street-register-note{border-radius:16px;padding:11px 14px;max-width:92%}
+}
+
+
+/* LANDING -> CATALOG GATE */
+.catalog-view{display:none}
+body.catalog-open .catalog-view{display:block}
+body:not(.catalog-open) footer{display:none}
+body:not(.catalog-open){overflow:hidden}
+body.catalog-open{overflow:auto}
+body.catalog-open #start{display:none}
+@media(max-width:720px){
+  body:not(.catalog-open) .navlinks a[href="#finds"],
+  body:not(.catalog-open) .navlinks a[href="#sellers"],
+  body:not(.catalog-open) .navlinks a[href="#usfans"]{display:none}
+}
 </style>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -694,23 +757,25 @@ section#finds{padding-top:105px}
 
   <main>
     <section class="hero street-hero" id="start">
-      <div class="container street-hero-inner">
+      <div class="container street-hero-inner street-hero-centered">
         <div class="street-eyebrow">PUCEK REPS / CURATED FINDS</div>
         <h1 class="street-title">PUCEK<br><span>REPS.</span></h1>
-        <div class="street-bottom">
-          <p>
-            Wybrane streetwear finds w jednym miejscu. Prosty katalog, szybkie wyszukiwanie
-            i bezpośrednie przejście do ofert.
-          </p>
-          <div class="hero-actions street-actions">
-            <a class="btn street-main-cta" href="#finds">Przejdź do Finds <span aria-hidden="true">→</span></a>
-            <a class="btn street-secondary-cta" href="https://www.usfans.com/register?ref=QTAPW5" target="_blank" rel="noopener noreferrer">USFans</a>
-          </div>
+        <p class="street-description">
+          Wybrane streetwear finds w jednym miejscu. Prosty katalog, szybkie wyszukiwanie
+          i bezpośrednie przejście do ofert.
+        </p>
+        <div class="hero-actions street-actions">
+          <a class="btn street-main-cta" id="enterFinds" href="#finds">Przejdź do Finds <span aria-hidden="true">→</span></a>
+          <a class="btn street-secondary-cta" href="https://www.usfans.com/register?ref=QTAPW5" target="_blank" rel="noopener noreferrer">Załóż konto USFans</a>
         </div>
-        <div class="street-scroll-note">SCROLL TO DISCOVER ↓</div>
+        <a class="street-register-note" href="https://www.usfans.com/register?ref=QTAPW5" target="_blank" rel="noopener noreferrer">
+          Nie masz jeszcze konta? <strong>Zarejestruj się przez Pucek Reps</strong> i zacznij przeglądać findsy.
+        </a>
+        <div class="street-scroll-note">KLIKNIJ, ABY WEJŚĆ DO KATALOGU ↑</div>
       </div>
     </section>
 
+    <div id="catalogView" class="catalog-view" aria-hidden="true">
     <section id="finds">
       <div class="container">
         <div class="section-head">
@@ -1614,6 +1679,7 @@ section#finds{padding-top:105px}
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <footer>
@@ -2709,5 +2775,49 @@ section#finds{padding-top:105px}
 })();
 </script>
 
+
+<script>
+(function(){
+  function openCatalog(targetId){
+    document.body.classList.add('catalog-open');
+    const catalog=document.getElementById('catalogView');
+    if(catalog) catalog.setAttribute('aria-hidden','false');
+    requestAnimationFrame(function(){
+      const target=document.querySelector(targetId || '#finds');
+      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+
+  const enter=document.getElementById('enterFinds');
+  if(enter){
+    enter.addEventListener('click',function(e){
+      e.preventDefault();
+      openCatalog('#finds');
+    });
+  }
+
+  document.querySelectorAll('a[href="#finds"],a[href="#sellers"],a[href="#usfans"]').forEach(function(link){
+    if(link.id==='enterFinds') return;
+    link.addEventListener('click',function(e){
+      if(!document.body.classList.contains('catalog-open')){
+        e.preventDefault();
+        openCatalog(link.getAttribute('href'));
+      }
+    });
+  });
+
+  document.querySelectorAll('a[href="#start"]').forEach(function(link){
+    link.addEventListener('click',function(e){
+      if(document.body.classList.contains('catalog-open')){
+        e.preventDefault();
+        document.body.classList.remove('catalog-open');
+        const catalog=document.getElementById('catalogView');
+        if(catalog) catalog.setAttribute('aria-hidden','true');
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
