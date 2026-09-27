@@ -459,6 +459,207 @@
 @media(max-width:700px){.best-finds-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:430px){.best-finds-grid{grid-template-columns:1fr}}
 
+
+
+/* === PUCEK REPS / MINIMAL STREETWEAR REDESIGN === */
+:root{
+  --bg:#080808;
+  --panel:#101010;
+  --panel2:#151515;
+  --line:#262626;
+  --text:#f3f3ef;
+  --muted:#969690;
+  --accent:#f3f3ef;
+  --accent2:#d8d8d2;
+  --shadow:0 24px 80px rgba(0,0,0,.50);
+}
+body{
+  background:
+    radial-gradient(circle at 78% 2%, rgba(255,255,255,.045), transparent 25%),
+    linear-gradient(180deg,#080808 0%,#0a0a0a 42%,#080808 100%);
+}
+header{
+  background:rgba(8,8,8,.84);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.brand{letter-spacing:.12em;font-size:15px;text-transform:uppercase}
+.brand span{color:var(--text)}
+.navlinks a{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#a4a49e}
+.nav-cta{background:var(--text)!important;color:#080808!important;border-radius:999px!important;padding:11px 16px!important}
+.currency-btn{border-radius:999px;background:#111;color:var(--text);border-color:#2a2a2a}
+.currency-btn:hover{border-color:#565656}
+
+.street-hero{
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  padding:118px 0 54px;
+  position:relative;
+  overflow:hidden;
+  text-align:left;
+}
+.street-hero:before{
+  content:"";
+  position:absolute;
+  width:58vw;
+  height:58vw;
+  min-width:520px;
+  min-height:520px;
+  right:-25vw;
+  bottom:-33vw;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  background:transparent;
+  filter:none;
+  pointer-events:none;
+}
+.street-hero:after{
+  content:"";
+  position:absolute;
+  width:34vw;
+  height:34vw;
+  min-width:340px;
+  min-height:340px;
+  right:-10vw;
+  bottom:-21vw;
+  border:1px solid rgba(255,255,255,.055);
+  border-radius:50%;
+  pointer-events:none;
+}
+.street-hero-inner{position:relative;z-index:2;width:100%}
+.street-eyebrow{
+  margin-bottom:26px;
+  color:#8d8d87;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.street-title{
+  margin:0;
+  max-width:950px;
+  font-size:clamp(70px,12.5vw,164px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  font-weight:950;
+  text-transform:uppercase;
+}
+.street-title span{color:var(--text)}
+.street-bottom{
+  margin-top:42px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:34px;
+  max-width:1030px;
+}
+.street-bottom p{
+  margin:0;
+  max-width:520px;
+  color:#989892;
+  font-size:15px;
+  line-height:1.75;
+}
+.street-actions{justify-content:flex-start;margin:0;flex:0 0 auto}
+.street-main-cta{
+  min-height:56px;
+  padding:0 25px;
+  border-radius:999px;
+  background:var(--text);
+  color:#080808;
+  border:1px solid var(--text);
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  font-size:12px;
+}
+.street-main-cta span{font-size:18px;line-height:1}
+.street-secondary-cta{
+  min-height:56px;
+  padding:0 22px;
+  border-radius:999px;
+  background:transparent;
+  color:var(--text);
+  border:1px solid #2f2f2f;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:12px;
+}
+.street-main-cta:hover,.street-secondary-cta:hover{transform:translateY(-2px)}
+.street-scroll-note{
+  margin-top:74px;
+  color:#5f5f5b;
+  font-size:10px;
+  letter-spacing:.20em;
+  font-weight:800;
+}
+
+section#finds{padding-top:105px}
+.section-head h2,.best-finds-head h2,.sellers-intro-polished h2,.usfans-copy h2{
+  text-transform:uppercase;
+  letter-spacing:-.045em;
+}
+.filters-wrap{
+  background:#0d0d0d;
+  border-color:#252525;
+  border-radius:20px;
+  padding:16px;
+}
+.search{
+  background:#090909;
+  border-color:#252525;
+  border-radius:999px;
+  padding:15px 19px;
+}
+.filter,.best-finds-filter-link{
+  border-radius:999px;
+  background:#111;
+  border-color:#282828;
+  color:#a8a8a2;
+}
+.filter.active,.filter:hover,.best-finds-filter-link:hover{
+  background:var(--text);
+  color:#080808;
+  border-color:var(--text);
+}
+#importStatus{color:#aaa!important}
+.card,.best-find-card,.seller-card{
+  background:#0f0f0f!important;
+  border-color:#252525!important;
+  border-radius:20px!important;
+}
+.card:hover,.best-find-card:hover,.seller-card:hover{border-color:#444!important}
+.product-media,.best-find-media{background:#f0f0ed!important}
+.product-btn,.best-find-usfans{border-radius:999px!important;background:var(--text)!important;color:#080808!important}
+.best-find-weidian{border-radius:999px!important;background:#151515!important}
+.badge,.best-find-badge{
+  border-radius:999px!important;
+  background:rgba(8,8,8,.82)!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+}
+.best-number-tag,.best-find-category{background:transparent!important;color:#b9b9b3!important}
+.best-number-tag{border:1px solid #333!important;border-radius:999px!important}
+.usfans-box{border-radius:28px;background:#0f0f0f;border-color:#252525}
+.btn-accent{background:var(--text);color:#080808}
+.popup{background:#0e0e0e;border-color:#2b2b2b}
+.popup h3 span{color:var(--text)}
+
+@media(max-width:820px){
+  .street-hero{padding-top:100px;min-height:92svh}
+  .street-title{font-size:clamp(64px,18vw,118px);line-height:.82;letter-spacing:-.065em}
+  .street-bottom{align-items:flex-start;flex-direction:column;margin-top:34px}
+  .street-actions{width:100%}
+  .street-main-cta{flex:1}
+  .street-scroll-note{margin-top:50px}
+}
+@media(max-width:520px){
+  .street-hero{padding-bottom:38px}
+  .street-title{font-size:clamp(58px,20vw,92px)}
+  .street-bottom p{font-size:14px}
+  .street-actions{display:grid;grid-template-columns:1fr}
+  .street-main-cta,.street-secondary-cta{width:100%}
+  .street-scroll-note{margin-top:38px}
+}
+
 </style>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -492,18 +693,21 @@
   </header>
 
   <main>
-    <section class="hero" id="start">
-      <div class="container hero-inner">
-        <div class="pill">WEIDIAN • USFANS • Finds</div>
-        <h1>PUCEK<br><span>REPS</span></h1>
-        <p>
-          Wybrane Finds w jednym miejscu. Kliknij produkt, aby przejść bezpośrednio
-          do jego strony na USFans.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#finds">Finds</a>
-          <a class="btn btn-dark" href="https://www.usfans.com/register?ref=QTAPW5" target="_blank" rel="noopener noreferrer">Załóż konto USFans</a>
+    <section class="hero street-hero" id="start">
+      <div class="container street-hero-inner">
+        <div class="street-eyebrow">PUCEK REPS / CURATED FINDS</div>
+        <h1 class="street-title">PUCEK<br><span>REPS.</span></h1>
+        <div class="street-bottom">
+          <p>
+            Wybrane streetwear finds w jednym miejscu. Prosty katalog, szybkie wyszukiwanie
+            i bezpośrednie przejście do ofert.
+          </p>
+          <div class="hero-actions street-actions">
+            <a class="btn street-main-cta" href="#finds">Przejdź do Finds <span aria-hidden="true">→</span></a>
+            <a class="btn street-secondary-cta" href="https://www.usfans.com/register?ref=QTAPW5" target="_blank" rel="noopener noreferrer">USFans</a>
+          </div>
         </div>
+        <div class="street-scroll-note">SCROLL TO DISCOVER ↓</div>
       </div>
     </section>
 
